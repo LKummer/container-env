@@ -11,3 +11,10 @@ Show the coverage report:
 ```
 $ coverate report
 ```
+
+Lint the sources:
+
+```
+$ pylint docker_env tests
+$ flake8
+```
