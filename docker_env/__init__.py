@@ -3,10 +3,10 @@
 
 from os import getenv
 
-__version__ = '0.1.0'
+__version__ = "0.1.0"
 
 
-def get_environment(variable, default=None, encoding='utf-8'):
+def get_environment(variable, default=None, encoding="utf-8"):
     """Get value of an environment variable.
 
     Returns the value of an environment variable if it exists.
@@ -23,6 +23,6 @@ def get_environment(variable, default=None, encoding='utf-8'):
     """
     if value := getenv(variable):
         return value
-    if file := getenv(f'{variable}_FILE'):
-        return open(file, mode='r', encoding=encoding).read()
+    if file := getenv(f"{variable}_FILE"):
+        return open(file, mode="r", encoding=encoding).read()
     return default

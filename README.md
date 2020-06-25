@@ -18,3 +18,9 @@ Lint the sources:
 $ pylint docker_env tests
 $ flake8
 ```
+
+Format the sources:
+
+```
+$ black docker_env tests
+```
