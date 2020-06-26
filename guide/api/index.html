@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+    <title>API Documentation - Container Env</title>
+    
+
+
+<link rel="stylesheet" href="/container-env/main.css">
+
+
+    
+<meta name="description" content="Learn about everything available in Container Env">
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "API Documentation",
+    "author": {
+        "@type": "Person",
+        "name": "Container Env Contributors"
+    },
+    "wordCount":  143 ,
+    "isAccessibleForFree": "true",
+    "license": "#",
+    "description": "Learn about everything available in Container Env"
+}
+</script>
+
+    
+
+<style>
+:root {
+    --color-accent-400: hsl(355, 65%, 45%);
+    --color-accent-500: hsl(355, 70%, 41%);
+    --color-accent-600: hsl(355, 73%, 39%);
+    --color-background-100: hsl(210, 20%, 90%);
+    --color-background-200: hsl(210, 20%, 90%);
+    --color-background-900: hsl(210, 30%, 80%);
+    --color-highlight-background: hsl(240, 13%, 14%);
+    --color-highlight-comment: hsl(250, 25%, 55%);
+    --color-highlight-literal: hsl(250, 80%, 70%);
+    --color-highlight-operator: hsl(330, 95%, 75%);
+    --color-highlight-special: hsl(180, 75%, 55%);
+    --color-highlight-text: hsl(240, 35%, 99%);
+    --color-primary-400: hsl(240, 40%, 15%);
+    --color-primary-500: hsl(240, 50%, 18%);
+    --color-primary-600: hsl(240, 55%, 20%);
+    --color-text-100: hsla(0, 0%, 0%, 0.7);
+    --color-text-700: hsla(0, 0%, 0%, 0.55);
+    --color-text-800: hsla(0, 0%, 0%, 0.7);
+    --color-text-900: hsla(0, 0%, 0%, 0.75);
+    }
+</style>
+
+
+</head>
+
+<body>
+    
+<div>
+    <header class="navbar">
+        <h1 class="navbar-logo">
+            Container Env
+        </h1>
+        
+        
+        <span class="navbar-spacer"></span>
+        <nav>
+            <ul class="navbar-navigation">
+                
+                <li>
+                <a href="https://lkummer.github.io/container-env/" class="navbar-navigation-item">
+                    Home
+                </a>
+                </li>
+                
+                <li>
+                <a href="https://lkummer.github.io/container-env/guide/" class="navbar-navigation-item">
+                    Guides
+                </a>
+                </li>
+                
+                <li>
+                <a href="https://lkummer.github.io/container-env" class="navbar-navigation-item">
+                    Github
+                </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </header>
+</div>
+
+<main class="l-single">
+    <aside class="toc l-single-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#get_environment"><code>get_environment()</code></a>
+      <ul>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#returns">Returns</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+    
+    <article class="article l-single-article">
+        <nav>
+            <ul class="article-breadcrumbs">
+                <li class="article-breadcrumbs-item">
+                    <a href="https://lkummer.github.io/container-env/guide">
+                        Guides
+                    </a>
+                </li>
+                <li class="article-breadcrumbs-item">
+                    <a href="https://lkummer.github.io/container-env/guide#user-guides">
+                        User Guides
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="article-title">
+            API Documentation
+        </h1>
+        <section class="article-content">
+            <p>Detailed documentation of the Container Env Python module.</p>
+<h2 id="get_environment"><code>get_environment()</code></h2>
+<p><code>get_environment(variable, default=None, encoding=&quot;utf-8&quot;)</code></p>
+<p>Returns the value of an environment variable if it exists.
+If it does not exist and a {variable}_FILE variable exists, the content of
+the file it points to will be returned.
+If neither exist, it returns the supplied default argument.</p>
+<h3 id="arguments">Arguments</h3>
+<ul>
+<li><code>name (str)</code>: Name of the environment variable based option.</li>
+<li><code>default (str)</code>: Default option, returned when the variable does not exist.</li>
+<li><code>encoding (str)</code>: Encoding used for reading files. <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">See the Python documentation for the possible values.</a></li>
+</ul>
+<h3 id="returns">Returns</h3>
+<p><code>str</code>: Value of the environment variable, or content of {name}_FILE file.</p>
+<h3 id="examples">Examples</h3>
+<p>Given an environment variable <code>DATABASE_USER</code> with the value <code>my_awesome_app</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">container_env</span> <span class="kn">import</span> <span class="n">get_environment</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_environment</span><span class="p">(</span><span class="s1">&#39;DATABASE_USER&#39;</span><span class="p">))</span>
+</code></pre></div><p>Produces the output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">my_awesome_app
+</code></pre></div><p>Given a file <code>/secrets/db_pass</code> containing <code>my_secret_password</code> and an environment variable <code>DATABASE_PASSWORD_FILE</code> with the value <code>/secrets/db_pass</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">container_env</span> <span class="kn">import</span> <span class="n">get_environment</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_environment</span><span class="p">(</span><span class="s1">&#39;DATABASE_PASSWORD&#39;</span><span class="p">))</span>
+</code></pre></div><p>Produces the output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">my_secret_password
+</code></pre></div>
+        </section>
+    </article></main>
+    <footer class="footer">
+    <div class="footer-container l-offset l-offset-start">
+        <section class="content content-dark">
+            
+            <h1 class="content-title">
+                About Container Env
+            </h1>
+            
+            
+            <p class="content-text">
+                After reusing this snippet for many Docker based Python projects, it seemed worth it to make a small module out of it with proper testing and documentation.
+            </p>
+            
+        </section>
+        
+        <nav>
+            <ul class="lowernav">
+                
+                <li>
+                    <a href="https://lkummer.github.io/container-env/" class="lowernav-item">
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://lkummer.github.io/container-env/guide/" class="lowernav-item">
+                        Guides
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://lkummer.github.io/container-env" class="lowernav-item">
+                        Github
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        
+    </div>
+</footer>
+
+    <script src="/container-env/main.js"></script>
+</body>
+</html>
