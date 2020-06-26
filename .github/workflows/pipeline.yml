@@ -1,4 +1,4 @@
-name: Integration
+name: Integration and Delivery
 
 on:
   - push
@@ -30,3 +30,20 @@ jobs:
       run: >
         coverage run --branch --omit tests* --module pytest
         ; coverage report
+
+  deploy-documentation:
+    name: Deploy documentation
+    runs-on: ubuntu-latest
+    needs: integration
+    steps:
+      - uses: actions/checkout@v2
+      - uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.73.0'
+      - name: Build the documentation
+        run: hugo --source docs --destination ../build/docs
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/docs

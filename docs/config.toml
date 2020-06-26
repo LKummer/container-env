@@ -1,4 +1,4 @@
-# baseURL = "https://lkummer.github.io/"
+baseURL = "https://lkummer.github.io/container-env"
 title = "Container Env"
 languageCode = "en"
 DefaultContentLanguage = "en"
