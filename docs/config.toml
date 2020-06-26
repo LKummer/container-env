@@ -1,5 +1,5 @@
 # baseURL = "https://lkummer.github.io/"
-title = "Docker Env"
+title = "Container Env"
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
@@ -10,7 +10,7 @@ pygmentsUseClasses = true
 
 [params]
   [params.footer]
-    title = "About Docker Env"
+    title = "About Container Env"
     text = "After reusing this snippet for many Docker based Python projects, it seemed worth it to make a small module out of it with proper testing and documentation."
   [params.seo]
     description = "Python library for environment based configuration."
@@ -24,7 +24,7 @@ pygmentsUseClasses = true
     operatingSystem = "Any"
     isFree = true
     license = "#"
-    defaultAuthor = "Docker Env Contributors"
+    defaultAuthor = "Container Env Contributors"
   [params.colors]
     primary-600 = "hsl(240, 55%, 20%)"
     primary-500 = "hsl(240, 50%, 18%)"

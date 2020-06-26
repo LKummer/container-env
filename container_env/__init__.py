@@ -1,4 +1,4 @@
-"""Docker environment variable utilities
+"""Container environment variable utilities
 """
 
 from os import getenv

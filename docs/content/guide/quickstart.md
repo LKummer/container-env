@@ -1,6 +1,6 @@
 ---
 title: 'Quick Start Guide'
-description: 'Get started with Docker Env quickly and easily'
+description: 'Get started with Container Env quickly and easily'
 categories:
   - User Guides
 ---

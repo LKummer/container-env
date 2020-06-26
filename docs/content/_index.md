@@ -6,7 +6,7 @@ menu:
 # Section Configuration:
 masthead:
   title: 'Native Docker Feel for Python Images'
-  subtitle: 'Configuring Dockerized Python images has never been easier'
+  subtitle: 'Configuring Dockerized Python has never been easier'
   buttons:
     - label: 'See the Guides'
       to: 'guide/'

@@ -1,11 +1,11 @@
 ---
 title: 'API Documentation'
-description: 'Learn about everything available in Docker Env'
+description: 'Learn about everything available in Container Env'
 categories:
   - User Guides
 ---
 
-Detailed documentation of the Docker Env Python module.
+Detailed documentation of the Container Env Python module.
 
 ## `get_environment()`
 
@@ -31,7 +31,7 @@ If neither exist, it returns the supplied default argument.
 Given an environment variable `DATABASE_USER` with the value `my_awesome_app`:
 
 ```python
-from docker_env import get_environment
+from container_env import get_environment
 print(get_environment('DATABASE_USER'))
 ```
 
@@ -44,7 +44,7 @@ my_awesome_app
 Given a file `/secrets/db_pass` containing `my_secret_password` and an environment variable `DATABASE_PASSWORD_FILE` with the value `/secrets/db_pass`:
 
 ```python
-from docker_env import get_environment
+from container_env import get_environment
 print(get_environment('DATABASE_PASSWORD'))
 ```
 

@@ -3,7 +3,7 @@
 
 from os import environ
 
-from docker_env import get_environment
+from container_env import get_environment
 
 
 def test_variable_value():

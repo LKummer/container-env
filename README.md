@@ -23,14 +23,14 @@ $ coverage report
 Lint the sources:
 
 ```
-$ pylint docker_env tests
+$ pylint container_env tests
 $ flake8
 ```
 
 Format the sources:
 
 ```
-$ black docker_env tests
+$ black container_env tests
 ```
 
 ## Documentation

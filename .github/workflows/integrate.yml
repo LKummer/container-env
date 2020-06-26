@@ -22,9 +22,9 @@ jobs:
     
     - name: Lint and format
       run: >
-        black --check docker_env tests
+        black --check container_env tests
         && flake8 --count
-        && pylint docker_env tests
+        && pylint container_env tests
     
     - name: Test
       run: >

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "docker-env"
+name = "container-env"
 version = "0.1.0"
 description = ""
 authors = ["Lior Kummer"]
