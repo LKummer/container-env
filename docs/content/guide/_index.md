@@ -17,6 +17,6 @@ bottom:
   text: 'Check existing issues or open a new one.'
   buttons:
     - label: 'Github Issues'
-      to: 'guide/'
+      href: 'https://github.com/LKummer/container-env/issues'
       color: 'accent'
 ---

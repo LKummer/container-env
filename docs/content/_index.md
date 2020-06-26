@@ -11,8 +11,8 @@ masthead:
     - label: 'See the Guides'
       to: 'guide/'
       color: 'accent'
-    - label: 'Download from PyPI'
-      href: '#'
+#   - label: 'Download from PyPI'
+#     href: '#'
 introduction:
   title: 'Configure Images Using Environment Variables'
   text: >
