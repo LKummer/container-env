@@ -1,0 +1,32 @@
+name: Integration
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  integration:
+    name: Integration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    
+    - name: Install dependencies
+      run: >
+        pip3 install poetry
+        && poetry config virtualenvs.create false
+        && poetry install
+    
+    - name: Lint and format
+      run: >
+        black --check docker_env tests
+        && flake8 --count
+        && pylint docker_env tests
+    
+    - name: Test
+      run: >
+        coverage run --branch --omit tests* --module pytest
+        ; coverage report
