@@ -1,0 +1,76 @@
+# baseURL = "https://lkummer.github.io/"
+title = "Docker Env"
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+theme = "lander"
+pygmentsUseClasses = true
+
+[params]
+  [params.footer]
+    title = "About Docker Env"
+    text = "After reusing this snippet for many Docker based Python projects, it seemed worth it to make a small module out of it with proper testing and documentation."
+  [params.seo]
+    description = "Python library for environment based configuration."
+    category = "Python"
+    downloadURL = "#"
+    # When the versionEnv option is set, the version is picked up from the
+    # specified environment variable. 
+    # versionEnv = "npm_package_version"
+    # The version can also be specified manually:
+    version = "0.1.0"
+    operatingSystem = "Any"
+    isFree = true
+    license = "#"
+    defaultAuthor = "Docker Env Contributors"
+  [params.colors]
+    primary-600 = "hsl(240, 55%, 20%)"
+    primary-500 = "hsl(240, 50%, 18%)"
+    primary-400 = "hsl(240, 40%, 15%)"
+    accent-600 = "hsl(355, 73%, 39%)"
+    accent-500 = "hsl(355, 70%, 41%)"
+    accent-400 = "hsl(355, 65%, 45%)"
+    background-900 = "hsl(210, 30%, 80%)"
+    background-200 = "hsl(210, 20%, 90%)"
+    background-100 = "hsl(210, 20%, 90%)"
+    text-900 = "hsla(0, 0%, 0%, 0.75)"
+    text-800 = "hsla(0, 0%, 0%, 0.7)"
+    text-700 = "hsla(0, 0%, 0%, 0.55)"
+    text-100 = "hsla(0, 0%, 0%, 0.7)"
+    highlight-text = "hsl(240, 35%, 99%)"
+    highlight-background = "hsl(240, 13%, 14%)"
+    highlight-comment = "hsl(250, 25%, 55%)"
+    highlight-special = "hsl(180, 75%, 55%)"
+    highlight-operator = "hsl(330, 95%, 75%)"
+    highlight-literal = "hsl(250, 80%, 70%)"
+
+[menu]
+  [[menu.main]]
+    name = "Github"
+    url = "#"
+
+[taxonomies]
+category = "categories"
+
+[privacy]
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+  [privacy.instagram]
+    disabled = false
+    simple = true
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+  [services.instagram]
+    disableInlineCSS = true
+  [services.twitter]
+    disableInlineCSS = true
