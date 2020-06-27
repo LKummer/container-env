@@ -51,9 +51,9 @@ jobs:
         with:
           hugo-version: '0.73.0'
       - name: Build the documentation
-        run: hugo --source docs --destination ../build/docs
+        run: hugo --source docs --destination ../dist/docs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/docs
+          publish_dir: ./dist/docs

@@ -44,5 +44,5 @@ $ hugo serve --source docs
 Build the documentation:
 
 ```
-$ hugo --source docs --destination ../build/docs
+$ hugo --source docs --destination ../dist/docs
 ```
