@@ -2,7 +2,7 @@
 title: 'API Documentation'
 description: 'Learn about everything available in Container Env'
 categories:
-  - User Guides
+  - Application
 ---
 
 Detailed documentation of the Container Env Python module.
@@ -37,7 +37,7 @@ print(get_environment('DATABASE_USER'))
 
 Produces the output:
 
-```sh
+```s
 my_awesome_app
 ```
 
@@ -50,6 +50,6 @@ print(get_environment('DATABASE_PASSWORD'))
 
 Produces the output:
 
-```sh
+```s
 my_secret_password
 ```

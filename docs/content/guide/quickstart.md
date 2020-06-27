@@ -2,7 +2,7 @@
 title: 'Quick Start Guide'
 description: 'Get started with Container Env quickly and easily'
 categories:
-  - User Guides
+  - Application
 ---
 
 The quick start guide is not yet written.
