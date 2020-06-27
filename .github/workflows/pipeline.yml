@@ -3,6 +3,7 @@ name: Integration and Delivery
 on:
   - push
   - pull_request
+  - release
 
 jobs:
   integration:
@@ -42,6 +43,7 @@ jobs:
   deploy-documentation:
     name: Deploy documentation
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'release' }}
     needs: integration
     steps:
       - uses: actions/checkout@v2
