@@ -5,8 +5,8 @@ menu:
     weight: 10
 # Section Configuration:
 masthead:
-  title: 'Native Docker Feel for Python Images'
-  subtitle: 'Configuring Dockerized Python has never been easier'
+  title: 'Make your Python images easy to use'
+  subtitle: 'Configure applications through the environment'
   buttons:
     - label: 'See the Guides'
       to: 'guide/'
@@ -14,18 +14,21 @@ masthead:
 #   - label: 'Download from PyPI'
 #     href: '#'
 introduction:
-  title: 'Configure Images Using Environment Variables'
+  title: 'Configure images with environment variables'
   text: >
-    Make your images easy to configure through Docker Compose and Kubernetes.
-    Easily integrate secrets into your image configuration.
+    Allow easy configuration. Enable easy use of secrets.
+    Make Docker Compose and Kubernetes users feel at home.
+
+  # Make your images easy to configure through Docker Compose and Kubernetes.
+  # Easily integrate secrets into your image configuration.
   cards:
-    - title: 'Easy to Use'
-      text: 'Simple and easy to use with Django, Flask and others.'
+    - title: 'Easy to Integrate'
+      text: 'Easy to use with frameworks. Django, Flask and others.'
     - title: 'Simple as Can Be'
-      text: 'Built to be easy to pick up and use.'
+      text: 'Easy to pick up. Minutes to get started.'
 bottom:
-  title: 'Easy as Py'
-  text: ' '
+  title: 'Start now!'
+  text: 'It will only take minutes'
   buttons:
     - label: 'Get Started Quickly'
       to: 'guide/quickstart'

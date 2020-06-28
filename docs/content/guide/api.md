@@ -9,7 +9,7 @@ Detailed documentation of the Container Env Python module.
 
 ## `get_environment()`
 
-`get_environment(variable, default=None, encoding="utf-8")`
+**`get_environment`** `(variable, default=None, encoding="utf-8")`
 
 Returns the value of an environment variable if it exists.
 If it does not exist and a {variable}_FILE variable exists, the content of
