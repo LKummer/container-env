@@ -10,6 +10,8 @@ configuration.
 * Seamless support for secrets.
 * Built with container orchestration in mind.
 
+[Visit the website](https://lkummer.github.io/container-env/) for more information.
+
 ## Getting Started
 
 Python 3.8 or higher is required.
