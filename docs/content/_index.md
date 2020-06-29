@@ -11,8 +11,8 @@ masthead:
     - label: 'See the Guides'
       to: 'guide/'
       color: 'accent'
-#   - label: 'Download from PyPI'
-#     href: '#'
+    - label: 'Install from PyPI'
+      href: 'https://pypi.org/project/container-env/'
 introduction:
   title: 'Configure images with environment variables'
   text: >

@@ -13,7 +13,8 @@ Python `3.8` or higher is required.
 
 ## Installation
 
-Container Env is available on PyPI as `container-env`.
+Container Env is [available on PyPI](https://pypi.org/project/container-env/)
+as `container-env`.
 
 ```s
 $ pip install container-env
