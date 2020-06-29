@@ -1,9 +1,9 @@
-name: Integration and Delivery
+name: Delivery
 
 on:
-  - push
-  - pull_request
-  - release
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   integration:
@@ -14,6 +14,7 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: 3.8
+
     - name: Cache dependencies
       uses: actions/cache@v2
       with:
@@ -22,17 +23,20 @@ jobs:
           ~/.cache/pypoetry
         key: ${{ runner.os }}-${{ hashFiles('poetry.lock') }}
         restore-keys: ${{ runner.os }}
+
     - name: Install dependencies
       env:
         POETRY_VIRTUALENVS_CREATE: false
       run: >
         pip3 install poetry
         && poetry install
+
     - name: Lint and format
       run: >
         black --check container_env tests
         && flake8 --count
         && pylint container_env tests
+
     - name: Test
       run: >
         coverage run --branch --omit tests* --module pytest
@@ -41,17 +45,18 @@ jobs:
   deployment:
     name: Documentation Deployment
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'release' }}
     needs: integration
     steps:
       - uses: actions/checkout@v2
       - uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.73.0'
+
       - name: Build the documentation
         env:
           PACKAGE_VERSION: ${{ github.ref }}
         run: hugo --source docs --destination ../dist/docs
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -61,17 +66,19 @@ jobs:
   delivery:
     name: Package Delivery
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'release' }}
     needs: integration
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
         with:
           python-version: 3.8
+
       - name: Install poetry
         run: pip3 install poetry
+
       - name: Build package
         run: poetry build
+
       - name: Publish package
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}

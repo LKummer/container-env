@@ -1,0 +1,42 @@
+name: Integration
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  integration:
+    name: Integration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.cache/pip
+          ~/.cache/pypoetry
+        key: ${{ runner.os }}-${{ hashFiles('poetry.lock') }}
+        restore-keys: ${{ runner.os }}
+
+    - name: Install dependencies
+      env:
+        POETRY_VIRTUALENVS_CREATE: false
+      run: >
+        pip3 install poetry
+        && poetry install
+
+    - name: Lint and format
+      run: >
+        black --check container_env tests
+        && flake8 --count
+        && pylint container_env tests
+
+    - name: Test
+      run: >
+        coverage run --branch --omit tests* --module pytest
+        ; coverage report
