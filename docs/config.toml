@@ -15,12 +15,12 @@ pygmentsUseClasses = true
   [params.seo]
     description = "Python library for environment based configuration."
     category = "Python"
-    downloadURL = "#"
+    downloadURL = "https://pypi.org/project/container-env/"
     # When the versionEnv option is set, the version is picked up from the
     # specified environment variable. 
-    # versionEnv = "npm_package_version"
+    versionEnv = "PACKAGE_VERSION"
     # The version can also be specified manually:
-    version = "0.1.0"
+    # version = "0.1.0"
     operatingSystem = "Any"
     isFree = true
     license = "https://github.com/LKummer/container-env/blob/master/LICENSE"

@@ -53,6 +53,8 @@ jobs:
         with:
           hugo-version: '0.73.0'
       - name: Build the documentation
+        env:
+          PACKAGE_VERSION: ${{ github.ref }}
         run: hugo --source docs --destination ../dist/docs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
