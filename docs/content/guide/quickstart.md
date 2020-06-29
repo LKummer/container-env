@@ -31,18 +31,18 @@ function helps read options from the environment.
 It has a special twist, it can also read files.
 Making integration with different ways to store secrets seamless.
 
-Consider the following snippet from a Django `settings.py` file:
+Lets have a look at it's functionality.
 
 ```python
 from container_env import get_environment
 
-SECRET_KEY = get_environment("DJANGO_KEY")
+print(get_environment("DATABASE_USER"))
 ```
 
-If a `DJANGO_KEY` environment variable exists, it's value will be used.
+If a `DATABASE_USER` environment variable exists, it's value will be printed.
 
-If a `DJANGO_KEY_FILE` environment variable exists and contains a path to a
-file, the content of the file will be used.
+If a `DATABASE_USER_FILE` environment variable exists and contains a path to a
+file, the content of the file will be printed.
 
 This enables great flexibility. Options can be managed using environment
 variables. Any option can be used with secrets.
