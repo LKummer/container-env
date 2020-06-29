@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "container-env"
 version = "0.1.0"
-description = ""
+description = "Library for environment based configuration."
 authors = ["Lior Kummer"]
 license = "MIT"
 readme = "README.md"
