@@ -14,7 +14,6 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: 3.8
-
     - name: Cache dependencies
       uses: actions/cache@v2
       with:
@@ -23,27 +22,24 @@ jobs:
           ~/.cache/pypoetry
         key: ${{ runner.os }}-${{ hashFiles('poetry.lock') }}
         restore-keys: ${{ runner.os }}
-
     - name: Install dependencies
       env:
         POETRY_VIRTUALENVS_CREATE: false
       run: >
         pip3 install poetry
         && poetry install
-    
     - name: Lint and format
       run: >
         black --check container_env tests
         && flake8 --count
         && pylint container_env tests
-
     - name: Test
       run: >
         coverage run --branch --omit tests* --module pytest
         ; coverage report
 
-  deploy-documentation:
-    name: Deploy documentation
+  deployment:
+    name: Documentation Deployment
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'release' }}
     needs: integration
@@ -61,3 +57,22 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/docs
+
+  delivery:
+    name: Package Delivery
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'release' }}
+    needs: integration
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install poetry
+        run: pip3 install poetry
+      - name: Build package
+        run: poetry build
+      - name: Publish package
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+        run: poetry publish
