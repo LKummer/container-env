@@ -17,9 +17,23 @@
       
       <guid>https://lkummer.github.io/container-env/guide/api/</guid>
       <description>Detailed documentation of the Container Env Python module.
-get_environment() get_environment(variable, default=None, encoding=&amp;quot;utf-8&amp;quot;)
+get_environment() get_environment (variable, default=None, encoding=&amp;quot;utf-8&amp;quot;)
 Returns the value of an environment variable if it exists. If it does not exist and a {variable}_FILE variable exists, the content of the file it points to will be returned. If neither exist, it returns the supplied default argument.
 Arguments  name (str): Name of the environment variable based option. default (str): Default option, returned when the variable does not exist.</description>
+    </item>
+    
+    <item>
+      <title>Development Guide</title>
+      <link>https://lkummer.github.io/container-env/guide/development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lkummer.github.io/container-env/guide/development/</guid>
+      <description>Everything you should know when working on this project.
+Installing Dependencies Container Env uses Poetry for dependency management. If you do not have it installed, download it from PyPI:
+$ pip install poetry Using Poetry, install the development dependencies:
+$ poetry install Testing, Linting and Formatting Run the unit tests check coverate:
+$ coverage run --branch --omit tests* --module pytest Show the coverage report:
+$ coverage report Lint the sources:</description>
     </item>
     
     <item>
@@ -28,7 +42,11 @@ Arguments  name (str): Name of the environment variable based option. default (s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lkummer.github.io/container-env/guide/quickstart/</guid>
-      <description>The quick start guide is not yet written.</description>
+      <description>All you need to know to get started with Container Env.
+Prerequisites Python 3.8 or higher is required.
+Installation Container Env is available on PyPI as container-env.
+$ pip install container-env Usage Container Env helps create environment variable based configuration. When using Docker Compose or Kubernetes, the easiest way to manage options is through environment variables.
+The get_environment() function helps read options from the environment. It has a special twist, it can also read files.</description>
     </item>
     
   </channel>

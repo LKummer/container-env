@@ -22,7 +22,7 @@
         "@type": "Person",
         "name": "Container Env Contributors"
     },
-    "wordCount":  8 ,
+    "wordCount":  170 ,
     "isAccessibleForFree": "true",
     "license": "https:\/\/github.com\/LKummer\/container-env\/blob\/master\/LICENSE",
     "description": "Get started with Container Env quickly and easily"
@@ -96,6 +96,16 @@
 </div>
 
 <main class="l-single">
+    <aside class="toc l-single-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#usage">Usage</a></li>
+  </ul>
+</nav>
+    </aside>
+    
     <article class="article l-single-article">
         <nav>
             <ul class="article-breadcrumbs">
@@ -105,8 +115,8 @@
                     </a>
                 </li>
                 <li class="article-breadcrumbs-item">
-                    <a href="https://lkummer.github.io/container-env/guide#user-guides">
-                        User Guides
+                    <a href="https://lkummer.github.io/container-env/guide#application">
+                        Application
                     </a>
                 </li>
             </ul>
@@ -115,7 +125,33 @@
             Quick Start Guide
         </h1>
         <section class="article-content">
-            <p>The quick start guide is not yet written.</p>
+            <p>All you need to know to get started with Container Env.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Python <code>3.8</code> or higher is required.</p>
+<h2 id="installation">Installation</h2>
+<p>Container Env is <a href="https://pypi.org/project/container-env/">available on PyPI</a>
+as <code>container-env</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">container</span><span class="o">-</span><span class="n">env</span>
+</code></pre></div><h2 id="usage">Usage</h2>
+<p>Container Env helps create environment variable based configuration.
+When using Docker Compose or Kubernetes, the easiest way to manage options is
+through environment variables.</p>
+<p>The <a href="https://lkummer.github.io/container-env/guide/api/#get_environment"><code>get_environment()</code></a>
+function helps read options from the environment.
+It has a special twist, it can also read files.
+Making integration with different ways to store secrets seamless.</p>
+<p>Consider the following snippet from a Django <code>settings.py</code> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">container_env</span> <span class="kn">import</span> <span class="n">get_environment</span>
+
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">get_environment</span><span class="p">(</span><span class="s2">&#34;DJANGO_KEY&#34;</span><span class="p">)</span>
+</code></pre></div><p>If a <code>DJANGO_KEY</code> environment variable exists, it&rsquo;s value will be used.</p>
+<p>If a <code>DJANGO_KEY_FILE</code> environment variable exists and contains a path to a
+file, the content of the file will be used.</p>
+<p>This enables great flexibility. Options can be managed using environment
+variables. Any option can be used with secrets.
+Making your Python containers easy to manage with any container orchestration
+tool.</p>
+<p>To learn more <a href="https://lkummer.github.io/container-env/guide/api/">see the full API documentation.</a></p>
 
         </section>
     </article></main>

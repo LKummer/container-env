@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>User Guides on Container Env</title>
-    <link>https://lkummer.github.io/container-env/categories/user-guides/</link>
-    <description>Recent content in User Guides on Container Env</description>
+    <title>Application on Container Env</title>
+    <link>https://lkummer.github.io/container-env/categories/application/</link>
+    <description>Recent content in Application on Container Env</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://lkummer.github.io/container-env/categories/user-guides/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lkummer.github.io/container-env/categories/application/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,7 @@
       
       <guid>https://lkummer.github.io/container-env/guide/api/</guid>
       <description>Detailed documentation of the Container Env Python module.
-get_environment() get_environment(variable, default=None, encoding=&amp;quot;utf-8&amp;quot;)
+get_environment() get_environment (variable, default=None, encoding=&amp;quot;utf-8&amp;quot;)
 Returns the value of an environment variable if it exists. If it does not exist and a {variable}_FILE variable exists, the content of the file it points to will be returned. If neither exist, it returns the supplied default argument.
 Arguments  name (str): Name of the environment variable based option. default (str): Default option, returned when the variable does not exist.</description>
     </item>
@@ -28,7 +28,11 @@ Arguments  name (str): Name of the environment variable based option. default (s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lkummer.github.io/container-env/guide/quickstart/</guid>
-      <description>The quick start guide is not yet written.</description>
+      <description>All you need to know to get started with Container Env.
+Prerequisites Python 3.8 or higher is required.
+Installation Container Env is available on PyPI as container-env.
+$ pip install container-env Usage Container Env helps create environment variable based configuration. When using Docker Compose or Kubernetes, the easiest way to manage options is through environment variables.
+The get_environment() function helps read options from the environment. It has a special twist, it can also read files.</description>
     </item>
     
   </channel>

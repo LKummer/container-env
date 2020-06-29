@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-    <title>API Documentation - Container Env</title>
+    <title>Development Guide - Container Env</title>
     
 
 
@@ -11,21 +11,21 @@
 
 
     
-<meta name="description" content="Learn about everything available in Container Env">
+<meta name="description" content="Development instructions for contribution">
 
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "API Documentation",
+    "headline": "Development Guide",
     "author": {
         "@type": "Person",
         "name": "Container Env Contributors"
     },
-    "wordCount":  144 ,
+    "wordCount":  133 ,
     "isAccessibleForFree": "true",
     "license": "https:\/\/github.com\/LKummer\/container-env\/blob\/master\/LICENSE",
-    "description": "Learn about everything available in Container Env"
+    "description": "Development instructions for contribution"
 }
 </script>
 
@@ -99,13 +99,9 @@
     <aside class="toc l-single-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#get_environment"><code>get_environment()</code></a>
-      <ul>
-        <li><a href="#arguments">Arguments</a></li>
-        <li><a href="#returns">Returns</a></li>
-        <li><a href="#examples">Examples</a></li>
-      </ul>
-    </li>
+    <li><a href="#installing-dependencies">Installing Dependencies</a></li>
+    <li><a href="#testing-linting-and-formatting">Testing, Linting and Formatting</a></li>
+    <li><a href="#documentation">Documentation</a></li>
   </ul>
 </nav>
     </aside>
@@ -119,42 +115,38 @@
                     </a>
                 </li>
                 <li class="article-breadcrumbs-item">
-                    <a href="https://lkummer.github.io/container-env/guide#application">
-                        Application
+                    <a href="https://lkummer.github.io/container-env/guide#development">
+                        Development
                     </a>
                 </li>
             </ul>
         </nav>
         <h1 class="article-title">
-            API Documentation
+            Development Guide
         </h1>
         <section class="article-content">
-            <p>Detailed documentation of the Container Env Python module.</p>
-<h2 id="get_environment"><code>get_environment()</code></h2>
-<p><strong><code>get_environment</code></strong> <code>(variable, default=None, encoding=&quot;utf-8&quot;)</code></p>
-<p>Returns the value of an environment variable if it exists.
-If it does not exist and a {variable}_FILE variable exists, the content of
-the file it points to will be returned.
-If neither exist, it returns the supplied default argument.</p>
-<h3 id="arguments">Arguments</h3>
-<ul>
-<li><code>name (str)</code>: Name of the environment variable based option.</li>
-<li><code>default (str)</code>: Default option, returned when the variable does not exist.</li>
-<li><code>encoding (str)</code>: Encoding used for reading files. <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">See the Python documentation for the possible values.</a></li>
-</ul>
-<h3 id="returns">Returns</h3>
-<p><code>str</code>: Value of the environment variable, or content of {name}_FILE file.</p>
-<h3 id="examples">Examples</h3>
-<p>Given an environment variable <code>DATABASE_USER</code> with the value <code>my_awesome_app</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">container_env</span> <span class="kn">import</span> <span class="n">get_environment</span>
-<span class="k">print</span><span class="p">(</span><span class="n">get_environment</span><span class="p">(</span><span class="s1">&#39;DATABASE_USER&#39;</span><span class="p">))</span>
-</code></pre></div><p>Produces the output:</p>
-<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="n">my_awesome_app</span>
-</code></pre></div><p>Given a file <code>/secrets/db_pass</code> containing <code>my_secret_password</code> and an environment variable <code>DATABASE_PASSWORD_FILE</code> with the value <code>/secrets/db_pass</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">container_env</span> <span class="kn">import</span> <span class="n">get_environment</span>
-<span class="k">print</span><span class="p">(</span><span class="n">get_environment</span><span class="p">(</span><span class="s1">&#39;DATABASE_PASSWORD&#39;</span><span class="p">))</span>
-</code></pre></div><p>Produces the output:</p>
-<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="n">my_secret_password</span>
+            <p>Everything you should know when working on this project.</p>
+<h2 id="installing-dependencies">Installing Dependencies</h2>
+<p>Container Env uses <a href="https://python-poetry.org/">Poetry</a> for dependency management. If you do not have it installed, download it from PyPI:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">poetry</span>
+</code></pre></div><p>Using Poetry, install the development dependencies:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">poetry</span> <span class="n">install</span>
+</code></pre></div><h2 id="testing-linting-and-formatting">Testing, Linting and Formatting</h2>
+<p>Run the unit tests check coverate:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">coverage</span> <span class="n">run</span> <span class="o">--</span><span class="n">branch</span> <span class="o">--</span><span class="n">omit</span> <span class="n">tests</span><span class="o">*</span> <span class="o">--</span><span class="n">module</span> <span class="n">pytest</span>
+</code></pre></div><p>Show the coverage report:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">coverage</span> <span class="n">report</span>
+</code></pre></div><p>Lint the sources:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">pylint</span> <span class="n">container_env</span> <span class="n">tests</span>
+<span class="o">$</span> <span class="n">flake8</span>
+</code></pre></div><p>Format the sources:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">black</span> <span class="n">container_env</span> <span class="n">tests</span>
+</code></pre></div><h2 id="documentation">Documentation</h2>
+<p>Container Env uses <a href="https://gohugo.io/">Hugo</a> to build the documentation. The CD pipeline uses version <a href="https://github.com/gohugoio/hugo/releases/tag/v0.73.0"><code>0.73.0</code></a>. It is not managed through Poetry and needs to be installed manually.</p>
+<p>Start a hot reload server on <code>localhost:1313/container-env</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">hugo</span> <span class="n">serve</span> <span class="o">--</span><span class="n">source</span> <span class="n">docs</span>
+</code></pre></div><p>Build the documentation to <code>dist/docs</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-s" data-lang="s"><span class="o">$</span> <span class="n">hugo</span> <span class="o">--</span><span class="n">source</span> <span class="n">docs</span> <span class="o">--</span><span class="n">destination</span> <span class="n">..</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">docs</span>
 </code></pre></div>
         </section>
     </article></main>

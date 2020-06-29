@@ -11,11 +11,20 @@
     
     
     <item>
-      <title>User Guides</title>
-      <link>https://lkummer.github.io/container-env/categories/user-guides/</link>
+      <title>Application</title>
+      <link>https://lkummer.github.io/container-env/categories/application/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lkummer.github.io/container-env/categories/user-guides/</guid>
+      <guid>https://lkummer.github.io/container-env/categories/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://lkummer.github.io/container-env/categories/development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lkummer.github.io/container-env/categories/development/</guid>
       <description></description>
     </item>
     

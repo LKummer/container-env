@@ -7,7 +7,19 @@
   </url>
   
   <url>
+    <loc>https://lkummer.github.io/container-env/categories/application/</loc>
+  </url>
+  
+  <url>
     <loc>https://lkummer.github.io/container-env/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://lkummer.github.io/container-env/categories/development/</loc>
+  </url>
+  
+  <url>
+    <loc>https://lkummer.github.io/container-env/guide/development/</loc>
   </url>
   
   <url>
@@ -20,10 +32,6 @@
   
   <url>
     <loc>https://lkummer.github.io/container-env/guide/quickstart/</loc>
-  </url>
-  
-  <url>
-    <loc>https://lkummer.github.io/container-env/categories/user-guides/</loc>
   </url>
   
 </urlset>
