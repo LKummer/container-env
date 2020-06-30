@@ -1,8 +1,10 @@
 # Container Env
 
-<a href="https://lkummer.github.io/container-env/">
-  <img src="assets/banner.svg" align="center">
-</a>
+<p>
+  <a href="https://lkummer.github.io/container-env/">
+    <img src="assets/banner.svg" align="center">
+  </a>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/pypi/v/container_env">
