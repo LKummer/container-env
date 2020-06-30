@@ -21,7 +21,7 @@ to get started.
 
 ## Usage
 
-[See the documentation](http://localhost:1313/container-env/guide/)
+[See the documentation](https://lkummer.github.io/container-env/guide/)
 to learn more about Container Env.
 
 ## Contributing
