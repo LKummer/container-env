@@ -22,10 +22,6 @@ $ pip install container-env
 
 ## Usage
 
-Container Env helps create environment variable based configuration.
-When using Docker Compose or Kubernetes, the easiest way to manage options is
-through environment variables.
-
 The [`get_environment()`]({{< ref "api.md#get_environment" >}})
 function helps read options from the environment.
 It has a special twist, it can also read files.
